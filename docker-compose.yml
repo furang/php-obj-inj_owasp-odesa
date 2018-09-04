@@ -1,0 +1,22 @@
+version: '3'
+services:
+    web:
+        image: nginx:latest
+        ports:
+            - "8080:80"
+        volumes:
+            - ./code:/code
+            - ./confs/nginx/site.conf:/etc/nginx/conf.d/site.conf
+        links:
+            - backend
+
+    backend:
+        build: confs/php
+        expose:
+            - "9000"
+            - "4444"
+        volumes:
+            - ./code:/code
+            - ./confs/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+        environment:
+            PHP_IDE_CONFIG: "serverName=docker"
