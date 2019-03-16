@@ -18,5 +18,6 @@ services:
         volumes:
             - ./code:/code
             - ./confs/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+            - ./confs/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
         environment:
             PHP_IDE_CONFIG: "serverName=docker"

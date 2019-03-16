@@ -1,5 +1,5 @@
 FROM php:7-fpm
-RUN apt update && apt -y install git unzip zlib1g-dev
+RUN apt update && apt -y install git unzip zlib1g-dev libzip-dev
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && docker-php-ext-install zip
