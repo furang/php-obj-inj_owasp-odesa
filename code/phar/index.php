@@ -1,0 +1,3 @@
+<?php
+
+$c = new EvilClass();
