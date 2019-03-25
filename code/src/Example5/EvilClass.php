@@ -1,5 +1,7 @@
 <?php
 
+namespace Examples\Example5;
+
 class EvilClass
 {
     function __destruct()
